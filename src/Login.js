@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
-import { TextInput, } from "react-native-gesture-handler";
+import {  Body, Segment,  Button as Btn,Container } from 'native-base';
+import { TextInput,} from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
     container: {
@@ -46,6 +47,11 @@ class Login extends React.Component {
     }
     render() {
         return (
+                  <Container>
+            <Segment>
+              <Btn first><Text>Puppies</Text></Btn>
+              <Btn last active><Text>Cubs</Text></Btn>
+            </Segment>
             <View style={styles.container}>
                 <Text style={styles.text}>Login</Text>
                 <TextInput style={styles.textInput}
@@ -99,6 +105,8 @@ class Login extends React.Component {
                     </View>
                 </TouchableOpacity>
             </View>
+        
+</Container>
         )
     }
 }

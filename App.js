@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import SplashScreen from './src/SplashScreen'
+import Main from './src/Main'
 import Login from './src/Login'
 
 class App extends React.Component {
@@ -10,7 +11,7 @@ constructor(props){
   console.log('APP')
   setTimeout(()=>{
     this.setState({currentScreen:'Login'})
-  },13000)
+  },3000)
 }
   render(){
       const { currentScreen } = this.state
