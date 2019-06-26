@@ -1,8 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import SplashScreen from './src/SplashScreen'
-import Main from './src/Main'
-import Login from './src/Login'
+import Home from './src/Home'
 
 class App extends React.Component {
 constructor(props){
@@ -15,7 +14,7 @@ constructor(props){
 }
   render(){
       const { currentScreen } = this.state
-      let mainScreen = currentScreen === 'Splash' ? <SplashScreen/> : <Login/>
+      let mainScreen = currentScreen === 'Splash' ? <SplashScreen/> : <Home/>
       return mainScreen      
   }
 }

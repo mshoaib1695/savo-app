@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
-import {  Body, Segment,  Button as Btn,Container } from 'native-base';
-import { TextInput,} from "react-native-gesture-handler";
-
+import { Body, Segment, Button as Btn, Container } from 'native-base';
+import { TextInput, } from "react-native-gesture-handler";
+import Main from './Main'
 const styles = StyleSheet.create({
     container: {
         backgroundColor: '#F5FCFF',
         flex: 1,
-        marginTop: 100,
+        marginTop: 50,
         // justifyContent: 'center',
     },
     text: {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         padding: 10,
         color: 'white'
     },
-    
+
 })
 
 class Login extends React.Component {
@@ -47,13 +47,7 @@ class Login extends React.Component {
     }
     render() {
         return (
-                  <Container>
-            <Segment>
-              <Btn first><Text>Puppies</Text></Btn>
-              <Btn last active><Text>Cubs</Text></Btn>
-            </Segment>
             <View style={styles.container}>
-                <Text style={styles.text}>Login</Text>
                 <TextInput style={styles.textInput}
                     placeholder="Enter username"
                     keyboardType="email-address"
@@ -77,13 +71,23 @@ class Login extends React.Component {
                 />
                 <TouchableOpacity>
                     <View style={styles.button}>
-                        <Text style={styles.buttonText}>Login</Text>
+                        <Text style={styles.buttonText}
+                        onPress={() => this.props.navigation.push('Main')}
+                        >Login</Text>
 
                     </View>
                 </TouchableOpacity>
-                <Text style={{ alignSelf: 'center', }}>Forget Password ?</Text>
-             
-                <TouchableOpacity style={{ height: 40, marginTop: 40 }}>
+
+                <View style={{flexDirection: 'row', alignItems:'flex-end'}}> 
+                    <View style={{backgroundColor: 'black', height: 2, width:100, alignSelf: 'center',marginLeft:'auto'}} /> 
+                    <Text style={{  paddingHorizontal:5, fontSize: 12, fontWeight:'500', alignSelf: 'center', }}>OR</Text> 
+                    <View style={{backgroundColor: 'black', height: 2,  width:100, alignSelf: 'center', marginRight:'auto',}} /> 
+                </View>
+
+
+                <TouchableOpacity style={{ height: 40, marginTop: 40 }}
+                
+                >
                     <View style={{
                         height: 40,
                         margin: 10,
@@ -93,7 +97,6 @@ class Login extends React.Component {
                         <Text style={styles.buttonText}>Login with Facebook</Text>
                     </View>
                 </TouchableOpacity>
-             
                 <TouchableOpacity style={{ height: 40, marginTop: 40 }}>
                     <View style={{
                         height: 40,
@@ -104,9 +107,9 @@ class Login extends React.Component {
                         <Text style={styles.buttonText}>Log in Google Acount</Text>
                     </View>
                 </TouchableOpacity>
+                <Text style={{ alignSelf: 'center', marginTop:20}}>Forget Password ?</Text>
             </View>
-        
-</Container>
+
         )
     }
 }
